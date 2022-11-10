@@ -1,0 +1,9 @@
+defaultNamespace: default
+helm:
+  chart: ./rancher-demo
+  releaseName: rancher-demo
+  values:
+    rancher-demo:
+      app:
+        localizations:
+          title: global.fleet.clusterLabels.management.cattle.io/cluster-display-name

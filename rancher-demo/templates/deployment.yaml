@@ -28,8 +28,11 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+          {{- if .Values.app.localization.title }}
+          {{- template "check-cluster-name" . }}
           - name: TITLE
             value: {{ .Values.app.localization.title | quote }}
+          {{- end }}
           - name: CONTAINER_COLOR
             value: {{ .Values.app.localization.color | quote }}
           - name: PETS

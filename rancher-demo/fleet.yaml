@@ -1,6 +1,6 @@
 defaultNamespace: default
 helm:
-  chart: ./rancher-demo
+  chart: .
   releaseName: rancher-demo
   values:
     app:
